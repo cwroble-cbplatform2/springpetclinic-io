@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 env:
   APP_NAME: spring-petclinic
-  NAMESPACE: change-me #This will be changed to the SE's personal namespace
+  NAMESPACE: cwroble2 #This will be changed to the SE's personal namespace
 jobs:
   evidence-collection:
     outputs:
@@ -203,7 +203,7 @@ jobs:
     needs: 
       - evidence-collection
   exit_gate:
-    environment: change-me_DEV  #This will be changed to SE's created DEV environment ex: tjohns_DEV
+    environment: cwroble_DEV2  #This will be changed to SE's created DEV environment ex: tjohns_DEV
     steps:
       - uses: cloudbees-io/publish-evidence-item@v1
         name: Publish Results
@@ -234,7 +234,7 @@ jobs:
     needs: 
       - deploy_dev
   deploy_dev:
-    environment: change-me_DEV #This will be changed to SE's created DEV environment ex: tjohns_DEV
+    environment: cwroble_DEV2 #This will be changed to SE's created DEV environment ex: tjohns_DEV
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
@@ -267,7 +267,7 @@ jobs:
     needs:
       - container-scan
   deploy_qa:
-    environment: change-me_QA #This will be changed to SE's created QA environment ex: tjohns_QA
+    environment: cwroble_QA2 #This will be changed to SE's created QA environment ex: tjohns_QA
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
@@ -315,7 +315,7 @@ jobs:
     needs: 
       - deploy_qa
   deploy_prod:
-    environment: change-me_PROD #This will be changed to SE's created PROD environment ex: tjohns_PROD
+    environment: cwroble_PROD2 #This will be changed to SE's created PROD environment ex: tjohns_PROD
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
