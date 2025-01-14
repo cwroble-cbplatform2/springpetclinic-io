@@ -17,7 +17,7 @@ pipeline {
     stage('Extract Environment VAriables from Job') {
         steps {
           script {
-            // Grab the pod name for the controller that kicks off the job
+            // Grab the pod name for the controller that kicks off the job - This will require a script approval
             env.controllerPodName = System.getenv('HOSTNAME')
             echo "Controller Pod Name extracted: ${env.controllerPodName}"
           }
